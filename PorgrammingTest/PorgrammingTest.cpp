@@ -65,13 +65,23 @@ int main()
 		}
 	}
 
-	if (population[maxAliveCount].size() > 1)
+	int size = population[maxAliveCount].size();
+	if (size > 1)
 	{
 		std::cout << "The years with most people alive are ";
 
-		for (unsigned int i = 0; i < population[maxAliveCount].size(); i++)
+		for (unsigned int i = 0; i < size; i++)
 		{
-			std::cout << population[maxAliveCount][i] << " | ";
+			std::cout << population[maxAliveCount][i];
+
+			if (i < size - 2)
+			{
+				std::cout << ", ";
+			}
+			else if (i < size - 1)
+			{
+				std::cout << " & ";
+			}
 		}
 
 		std::cout << " with a total of " << maxAliveCount << " people alive.\n";
